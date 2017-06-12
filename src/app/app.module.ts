@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AgmCoreModule } from '@agm/core';
 
+import { AppComponent } from './app.component';
+import { MapComponent } from './map/map.component';
+import { InterfaceComponent } from './interface/interface.component';
+import { InfoComponent } from './info/info.component';
+
+//AIzaSyBAkVzzss52PwyMmN5LAzhWxAU4S1-Ducs
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent,
+    InterfaceComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+       AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBAkVzzss52PwyMmN5LAzhWxAU4S1-Ducs'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

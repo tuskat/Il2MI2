@@ -1,0 +1,16 @@
+<div class="interface animated fadeIn">
+  <span><i class="fa fa-rocket"></i> IL2T MI&#178;</span>
+  <form>
+    <input type="text" placeholder="From..." [(ngModel)]="origin" name="origin" required/>
+    <input type="text" placeholder="To.." [(ngModel)]="destination" name="destination" required/>
+    <button type="button" (click)="submitForm()">submit</button>
+
+  </form>
+
+</div>
+<div class="tooltip animated fadeInDown" *ngIf="showTips">
+  <p><i class="fa fa-warning"></i> Fill both fields before submitting</p>
+  <span class="dismiss" (click)="showTips = false"><i class="fa fa-2x fa-close"></i></span>
+</div>
+<app-map></app-map>
+<app-info *ngIf="showFeedback" (onDismissed)="onDismissed($event)" [errorMessage]="errorMessage" [isLoading]="showLoading"></app-info>

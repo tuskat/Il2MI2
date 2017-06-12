@@ -1,1 +1,207 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+Global css
+*/
+@font-face {
+    font-family: 'Biko';
+    src: url('./fonts/Biko_Regular.otf');
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    min-width:320px;
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+html, body, input {
+    font-family: 'Biko';
+    font-weight: 700;
+
+}
+
+ button {
+    height:calc(100% - 15px);
+    border-radius:2px;
+    color : orangered;
+    background:transparent;
+    border:1px solid orangered;
+    transition:all 200ms ease-in-out;
+    outline:none;
+}
+ button:hover {
+    color:white;
+    background:orangered;
+}
+/*
+Interface related css
+*/
+
+.interface {
+    box-sizing: border-box;
+    width:100%;
+    height:50px;
+    display:inline-block;
+    position:relative;
+    border-left:5px solid orangered; 
+    padding-left:10px;    
+    	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.interface input, .interface button {
+  font-size:16px;
+     padding:5px 10px;
+  text-transform: uppercase;
+}
+
+.interface input {
+    height:calc(100% - 15px);
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius:0;
+    box-sizing: border-box;
+}
+
+.interface span {
+  padding:12px 5px;
+  display:inline-block;
+  text-transform: uppercase;
+  color:orangered;
+  font-weight: 900;
+  font-size:20px;
+}
+
+.interface form {
+  position:absolute;
+  right:10px;
+  top:5px;
+  height:100%;
+    display:inline-block;
+    vertical-align: top;
+}
+.tooltip {
+    position:absolute;
+    box-sizing: border-box;
+    width:100%;
+    z-index: 1;
+    background:rgba(100,100,100,0.5);
+    color:white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    padding: 1em;
+}
+.tooltip p {
+    margin : 0;
+    font-size:20px;
+    font-weight: 500;
+}
+.tooltip .dismiss {
+    color:white;
+    text-shadow: initial;
+}
+.tooltip .dismiss:hover {
+    color:orangered;
+}
+
+/*
+Map related css
+*/
+.sebm-google-map-container {
+  height: 100vh;
+}
+/*
+Info related css
+*/
+.loading-bg {
+    position:fixed;
+    height:100vh;
+    width:100vw;
+    top:0;
+    background:rgba(100, 100, 100,0.5);
+}
+.loading {
+color:white;
+ text-shadow: 2px 4px 3px rgba(0,0,0,0.3);   
+text-align: center; 
+}
+.dismiss {
+    position:absolute;
+    right:10px;
+    top:10px;
+    color:white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    transition: all 200ms ease-in-out;
+}
+.dismiss:hover {
+    color:orangered;
+}
+
+.info {
+    position:absolute;
+    text-align: center;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    min-width: 320px;
+}
+.info button {   
+    color:white;
+     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border: 1px solid white;
+    height: 50px;
+    font-size: 20px;
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+}
+
+.feedback {
+    font-size:25px;
+   	color:white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+/*
+ Media Queries for responsive design
+*/
+@media screen and (max-width: 640px) {
+   
+
+    .interface {
+        height:auto;
+        padding:0;
+        padding-bottom:10px;
+        border: none;
+        border-bottom: 5px solid orangered;
+    }
+    .interface span {
+        padding: 10px 0;
+        display:block;
+          text-align: center;
+    }
+    .interface form {
+      position:relative;
+      right:initial;
+      top:initial;
+      margin-top:5px;
+        
+        display:block;
+    }
+    .interface form button,.interface form input {
+        
+        text-align: center;
+        display:block;
+        width:calc(100% - 20px);
+        padding: 5px;
+        margin:10px auto;
+        box-sizing: border-box;
+    }
+}
+@media screen and (max-width: 320px) {
+    .info {
+        left:0;
+        transform: initial;   
+    }
+}

@@ -1,0 +1,8 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+
+  <agm-polyline *ngFor="let polyline of polylines">
+    <agm-polyline-point *ngFor="let point of polyline" [latitude]="toCoordinate(point[0])" [longitude]="toCoordinate(point[1])">
+    </agm-polyline-point>
+  </agm-polyline>
+  <agm-marker *ngFor="let marker of markers" [latitude]="toCoordinate(marker[0])" [longitude]="toCoordinate(marker[1])" [title]="marker.label"></agm-marker>
+</agm-map>

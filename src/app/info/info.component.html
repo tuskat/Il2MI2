@@ -1,0 +1,16 @@
+<div class="loading-bg">
+    <span  *ngIf="errorMessage !== null" class="dismiss" (click)="dismissedWindow()"><i class="fa fa-2x fa-close"></i></span>
+    <div class="info">
+
+        <div class="loading animated fadeIn" *ngIf="errorMessage === null">
+            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+        </div>
+
+        <span class="animated fadeIn feedback"  *ngIf="errorMessage !== null">
+               <i *ngIf="errorMessage !== 'success'" class="fa fa-warning fa-2x"></i>
+               <i *ngIf="errorMessage === 'success'" class="fa fa-check fa-2x"></i>
+            Status : {{errorMessage}}
+            </span>
+        <button *ngIf="errorMessage !== null && errorMessage !== 'success'" (click)="retrySubmit()">Submit Again</button>
+    </div>
+</div>
